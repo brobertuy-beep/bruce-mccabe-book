@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bruce McCabe: Lucifer, He Knew I Would Never Stay Down</title>
+<meta name="description" content="A memoir of trauma, resilience and never giving up, by Army veteran and author Bruce McCabe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c0e;
+    --bg-soft:#141416;
+    --card:#18181b;
+    --paper:#f7f4ef;
+    --ink:#f4f2ee;
+    --ink-dim:#1c1c1e;
+    --muted:#9b9b9f;
+    --muted-soft:#6b6b70;
+    --orange:#f47c20;
+    --orange-light:#ffab5c;
+    --orange-deep:#c95e0e;
+    --line:rgba(255,255,255,0.10);
+    --line-dark:rgba(16,16,18,0.10);
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  h1,h2,h3{font-family:'Playfair Display', serif; line-height:1.12; letter-spacing:-0.01em;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    font-size:0.78rem; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--orange); font-weight:700;
+  }
+
+  /* NAV */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(12,12,14,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:66px;}
+  .brand{font-family:'Playfair Display',serif; font-weight:700; font-size:1.15rem; color:#fff; letter-spacing:0.01em;}
+  .brand span{color:var(--orange-light);}
+  .nav-cta{
+    background:linear-gradient(135deg, var(--orange-light), var(--orange));
+    color:#1a0e00; font-weight:700; font-size:0.88rem;
+    padding:10px 22px; border-radius:100px; transition:transform .2s ease, box-shadow .2s ease;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{transform:translateY(-1px); box-shadow:0 8px 20px rgba(244,124,32,0.35);}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    color:#fff;
+    padding:170px 0 90px;
+    overflow:hidden;
+    background:#0c0c0e;
+  }
+  .hero-bg{
+    position:absolute; inset:0; z-index:0;
+    background-image:linear-gradient(180deg, rgba(10,10,11,0.55) 0%, rgba(10,10,11,0.75) 55%, rgba(10,10,11,0.97) 100%), var(--hero-photo);
+    background-size:cover;
+    background-position:center 20%;
+    filter:saturate(0.85);
+  }
+  .hero-content{position:relative; z-index:1; max-width:640px;}
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 3.8rem);
+    font-weight:800;
+    margin:18px 0 20px;
+    color:#fff;
+  }
+  .hero h1 .accent{
+    display:block;
+    color:var(--orange);
+  }
+  .hero-sub{
+    font-size:1.15rem; color:rgba(255,255,255,0.8); font-weight:400;
+    margin:0 0 30px; max-width:52ch;
+  }
+  .hero-quote{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size:1.1rem;
+    color:rgba(255,255,255,0.9);
+    border-left:2px solid var(--orange);
+    padding-left:18px;
+    margin:0 0 34px;
+    max-width:48ch;
+    line-height:1.5;
+  }
+  .btn-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:16px 30px; border-radius:100px; font-weight:700; font-size:0.96rem;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--orange-light), var(--orange));
+    color:#1a0e00;
+    box-shadow:0 10px 30px rgba(244,124,32,0.3);
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 34px rgba(244,124,32,0.42);}
+  .btn-ghost{
+    border:1.5px solid rgba(255,255,255,0.35);
+    color:#fff;
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.6);}
+
+  .stat-strip{
+    position:relative; z-index:1;
+    border-top:1px solid var(--line);
+    margin-top:56px; padding-top:32px;
+    display:flex; gap:50px; flex-wrap:wrap;
+    max-width:640px;
+  }
+  .stat{min-width:110px;}
+  .stat b{display:block; font-family:'Playfair Display',serif; font-size:1.7rem; color:#fff; font-variant-numeric:tabular-nums;}
+  .stat span{font-size:0.78rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted);}
+
+  /* SECTION generic */
+  section{padding:100px 0;}
+  .section-head{max-width:640px; margin:0 auto 56px; text-align:center;}
+  .section-head h2{font-size:clamp(1.8rem,3vw,2.5rem); margin-top:12px;}
+  .section-head p{color:var(--muted); margin-top:14px; font-size:1.05rem;}
+
+  /* ABOUT */
+  .about{background:var(--bg);}
+  .about-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:64px; align-items:center;}
+  .about-photo{position:relative;}
+  .about-photo img{
+    border-radius:10px;
+    box-shadow:0 30px 60px -15px rgba(0,0,0,0.55);
+    width:100%;
+  }
+  .about-photo::after{
+    content:"";
+    position:absolute; top:22px; left:22px; right:-22px; bottom:-22px;
+    border:2px solid var(--orange); border-radius:10px; z-index:-1;
+  }
+  .about-text h2{font-size:clamp(1.7rem,2.8vw,2.3rem); margin:12px 0 22px; color:#fff;}
+  .about-text p{color:var(--muted); margin-bottom:16px; font-size:1.03rem;}
+  .about-text p strong{color:var(--ink);}
+  .pill-list{display:flex; gap:10px; flex-wrap:wrap; margin-top:26px;}
+  .pill{
+    background:var(--card); border:1px solid var(--line); color:var(--ink);
+    font-size:0.8rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase;
+    padding:9px 16px; border-radius:100px;
+  }
+
+  /* BOOK / STORY */
+  .book-section{background:var(--bg-soft); color:#fff;}
+  .book-grid{display:grid; grid-template-columns:0.55fr 1.45fr; gap:60px; align-items:start;}
+  .book-cover-wrap{position:sticky; top:100px;}
+  .book-cover-wrap img{
+    border-radius:6px;
+    box-shadow:0 30px 70px -15px rgba(0,0,0,0.6);
+  }
+  .book-meta{margin-top:22px; font-size:0.9rem; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:4px 16px;}
+  .book-meta div{display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--line);}
+  .book-meta div:last-child{border-bottom:none;}
+  .book-meta span{color:var(--muted); font-size:0.78rem; letter-spacing:0.05em; text-transform:uppercase;}
+  .book-meta b{color:#fff; font-weight:600;}
+  .book-text h2{color:#fff; font-size:clamp(1.7rem,2.8vw,2.3rem); margin-bottom:20px;}
+  .book-text p{color:var(--muted); margin-bottom:16px; font-size:1.02rem;}
+  .pullquote{
+    font-family:'Playfair Display',serif; font-style:italic; font-size:1.3rem;
+    color:var(--orange-light); margin:30px 0; line-height:1.5;
+    border-left:2px solid var(--orange); padding-left:20px;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials{background:var(--bg);}
+  .t-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .t-card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:32px 28px; display:flex; flex-direction:column; height:100%;
+  }
+  .stars{color:var(--orange); font-size:1rem; letter-spacing:2px; margin-bottom:16px;}
+  .t-card p{font-size:1rem; color:var(--ink); flex:1; margin-bottom:20px;}
+  .t-author{display:flex; align-items:center; gap:12px; padding-top:16px; border-top:1px solid var(--line);}
+  .t-avatar{
+    width:38px; height:38px; border-radius:50%;
+    background:transparent; border:1.5px solid var(--orange);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display',serif; font-weight:700; color:var(--orange-light); font-size:0.9rem;
+  }
+  .t-author b{font-size:0.92rem; display:block; color:#fff;}
+  .t-author span{font-size:0.74rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--muted);}
+
+  /* CTA / GET THE BOOK */
+  .cta-section{
+    background:var(--bg-soft);
+    color:#fff; position:relative; overflow:hidden;
+  }
+  .cta-card{
+    position:relative; z-index:1;
+    max-width:720px; margin:0 auto; text-align:center;
+  }
+  .cta-card h2{font-size:clamp(1.9rem,3.4vw,2.7rem); color:#fff; margin:14px 0 16px;}
+  .cta-card p{color:var(--muted); font-size:1.08rem; max-width:56ch; margin:0 auto 36px;}
+  .price-box{
+    background:var(--card); border:1px solid var(--line);
+    padding:30px 34px; border-radius:16px; margin-bottom:34px;
+  }
+  .price-box .price{font-family:'Playfair Display',serif; font-weight:800; font-size:2.4rem; color:var(--orange-light);}
+  .price-box .price small{font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); font-family:'Inter',sans-serif; font-weight:500; display:block; margin-top:2px;}
+  .price-box .rule{height:1px; background:var(--line); margin:18px 0;}
+  .price-box .pages{font-size:0.92rem; color:var(--muted);}
+  .price-box .direct{font-size:0.9rem; color:var(--muted); margin-top:10px;}
+  .price-box .direct a{color:var(--orange-light); font-weight:600;}
+
+  /* FOOTER */
+  footer{background:var(--bg); color:var(--muted); padding:44px 0 30px; border-top:1px solid var(--line);}
+  .footer-grid{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;}
+  footer .brand{font-size:1rem;}
+  .footer-links{display:flex; gap:22px; font-size:0.88rem;}
+  .footer-links a:hover{color:#fff;}
+  .footer-bottom{margin-top:26px; font-size:0.8rem; color:var(--muted-soft); text-align:center;}
+
+  /* sticky mobile CTA */
+  .sticky-cta{
+    position:fixed; bottom:0; left:0; right:0; z-index:90;
+    background:var(--bg-soft); border-top:1px solid var(--line);
+    padding:12px 16px; display:none; gap:10px;
+  }
+  .sticky-cta .btn{flex:1; justify-content:center; padding:13px 10px; font-size:0.9rem;}
+
+  @media (max-width: 880px){
+    .hero{padding:130px 0 70px;}
+    .hero-bg{background-position:center 30%;}
+    .about-grid{grid-template-columns:1fr; gap:40px;}
+    .about-photo{max-width:320px; margin:0 auto;}
+    .book-grid{grid-template-columns:1fr;}
+    .book-cover-wrap{position:static; max-width:260px; margin:0 auto;}
+    .t-grid{grid-template-columns:1fr;}
+    section{padding:70px 0;}
+    .sticky-cta{display:flex;}
+    body{padding-bottom:70px;}
+  }
+  @media (max-width: 520px){
+    .nav-cta{padding:9px 14px; font-size:0.8rem;}
+    .price-box{padding:22px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Bruce <span>McCabe</span></div>
+    <a href="#contact" class="nav-cta">Get the Book</a>
+  </div>
+</nav>
+
+<header class="hero" id="top" style="--hero-photo:url('images/author-photo.png');">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="eyebrow">Non-fiction Memoir &middot; Australia</div>
+      <h1>He was knocked down again and again.<span class="accent">He never stayed there.</span></h1>
+      <p class="hero-sub">Bruce McCabe, Army veteran, teacher and counsellor, shares the raw, honest story of overcoming a violent childhood and rebuilding himself, one choice at a time.</p>
+      <p class="hero-quote">"If you get knocked down, get up. If you get hurt, get up. If you f*** up, get up. No matter what, get up!"</p>
+      <div class="btn-row">
+        <a href="#contact" class="btn btn-primary">Get the Book &middot; $38</a>
+        <a href="https://instagram.com/brucemccabe1" target="_blank" rel="noopener" class="btn btn-ghost">Follow on Instagram</a>
+      </div>
+      <div class="stat-strip">
+        <div class="stat"><b>200</b><span>Pages</span></div>
+        <div class="stat"><b>1957&ndash;2020s</b><span>Decades of Story</span></div>
+        <div class="stat"><b>35</b><span>Years on the Journey</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <img src="images/author-photo.png" alt="Bruce McCabe, author, sitting by the ocean">
+    </div>
+    <div class="about-text">
+      <div class="eyebrow">About Bruce</div>
+      <h2>A story of choice: victim of circumstance, or empowered by it.</h2>
+      <p>Bruce was born into a violent and dysfunctional family. He watched the abusive relationships his mother endured, including from his own father, and carried that pain through a childhood spent moving across <strong>Victoria, New South Wales, and Surfers Paradise</strong> from the late 1950s into the 1970s.</p>
+      <p>He learned to fight first and push people away. It got him into plenty of trouble as he knocked about the colourful surf culture of the 1970s: odd jobs, dust-ups, and the natural healing he found in the ocean.</p>
+      <p>By the 1980s, happily married, the old emotions crept back. What followed was a decades-long journey through <strong>teaching, travel, and counselling</strong>, learning to notice feelings, to be present, and to choose rather than react.</p>
+      <p>His story is told through snippets and humour, proof that the path is never straight, but the "never give up" mantra breaks the cycle.</p>
+      <div class="pill-list">
+        <span class="pill">Army Veteran</span>
+        <span class="pill">Teacher</span>
+        <span class="pill">Surfer</span>
+        <span class="pill">Counsellor</span>
+        <span class="pill">Author</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="book-section" id="book">
+  <div class="wrap book-grid">
+    <div class="book-cover-wrap">
+      <img src="images/book-cover.png" alt="Lucifer, He knew I would never stay down, book cover by Bruce McCabe">
+      <div class="book-meta">
+        <div><span>Genre</span><b>Non-fiction / Memoir</b></div>
+        <div><span>Pages</span><b>200</b></div>
+        <div><span>Price</span><b>$38 (incl. postage)</b></div>
+      </div>
+    </div>
+    <div class="book-text">
+      <div class="eyebrow">The Book</div>
+      <h2>"Lucifer: He Knew I Would Never Stay Down"</h2>
+      <p>This is a story about choice: to be a victim of circumstances, or become empowered by them. Army veteran Bruce McCabe tells the story of a man who never gave up on himself after a traumatic and violent childhood, and the pain and isolation he bore watching the abusive relationships his mother endured, including with his own father.</p>
+      <p>That pattern repeated with other men as the family moved to escape the breakdown of relationships, from the late 1950s through the 1970s. Bruce's struggle to be a good man, to overcome trauma and its instinctive reactions, is tested again in the 2020s. But the effort of the last 35 years finally lets him make the right choices.</p>
+      <p class="pullquote">"The essence of the book weaves Bruce's struggle to be a better man, to overcome trauma and its instinctive reactions."</p>
+      <p>Weaving childhood trauma with the healing power of nature, teaching, counselling, and an unshakable openness to learn, Bruce's memoir is both an uncovering of unconscious truths and a celebration of joyous realisation.</p>
+      <a href="#contact" class="btn btn-primary" style="margin-top:10px;">Order Your Copy &middot; $38</a>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What Readers Are Saying</div>
+      <h2>A story that stays with you</h2>
+      <p>Readers describe a book that's honest, funny, and deeply human.</p>
+    </div>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"I can thoroughly recommend this book to anyone seeking to overcome adversity. I read the narrative in one sitting, which is unusual for me. The courage to shine a critical light on yourself will inspire. It is a story of self-development, of hope, of compassion. Take these gifts."</p>
+        <div class="t-author">
+          <div class="t-avatar">RB</div>
+          <div><b>Rob Baird</b><span>Reader</span></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"This narrative made me laugh and at times brought tears to my eyes, but most of all it made me understand a man called Bruce. This is a story on what it is to be a 'good man' and the power of resilience. You will be entertained as well as learn some of life's lessons along the way."</p>
+        <div class="t-author">
+          <div class="t-avatar">CE</div>
+          <div><b>Cathy East</b><span>Reader</span></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"The raw honesty of the book packs a punch and makes it a compelling read. Bruce has the gift of simplicity in his writing, using only needed words to convey complex and real-life issues. He made my life look like a cake walk!"</p>
+        <div class="t-author">
+          <div class="t-avatar">DH</div>
+          <div><b>Doug Harland</b><span>OAM, FIE (Aust)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <div class="wrap cta-card">
+    <div class="eyebrow">Get Your Copy</div>
+    <h2>Some battles are fought by the soul.</h2>
+    <p>Own the memoir readers are calling honest, funny, and impossible to put down. Get in touch with Bruce directly to order your copy.</p>
+    <div class="price-box">
+      <div class="price">$38<small>Incl. Postage</small></div>
+      <div class="rule"></div>
+      <div class="pages">200 pages &middot; Non-fiction memoir</div>
+      <div class="direct">Or email directly: <a href="mailto:brucemccabe.2@outlook.com">brucemccabe.2@outlook.com</a></div>
+      <div class="direct">Instagram: <a href="https://instagram.com/brucemccabe1" target="_blank" rel="noopener">@brucemccabe1</a></div>
+    </div>
+    <div class="btn-row" style="justify-content:center;">
+      <a href="mailto:brucemccabe.2@outlook.com?subject=Ordering%20Lucifer%20-%20He%20Knew%20I%20Would%20Never%20Stay%20Down" class="btn btn-primary">Email Bruce to Order</a>
+      <a href="https://instagram.com/brucemccabe1" target="_blank" rel="noopener" class="btn btn-ghost">Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="brand">Bruce <span style="color:var(--orange-light);">McCabe</span></div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#book">The Book</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">&copy; 2026 Bruce McCabe. All rights reserved.</div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="mailto:brucemccabe.2@outlook.com?subject=Ordering%20Lucifer" class="btn btn-primary">Get the Book</a>
+  <a href="https://instagram.com/brucemccabe1" target="_blank" rel="noopener" class="btn btn-ghost">Instagram</a>
+</div>
+
+</body>
+</html>
