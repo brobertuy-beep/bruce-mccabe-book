@@ -168,10 +168,10 @@
     box-shadow:0 30px 70px -15px rgba(0,0,0,0.45);
   }
   .book-meta{margin-top:22px; font-size:0.9rem; background:rgba(255,255,255,0.08); border:1px solid var(--line-on-blue); border-radius:10px; padding:4px 16px;}
-  .book-meta div{display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--line-on-blue);}
+  .book-meta div{display:flex; flex-direction:column; gap:4px; padding:12px 0; border-bottom:1px solid var(--line-on-blue);}
   .book-meta div:last-child{border-bottom:none;}
-  .book-meta span{color:rgba(255,255,255,0.65); font-size:0.78rem; letter-spacing:0.05em; text-transform:uppercase;}
-  .book-meta b{color:#fff; font-weight:600;}
+  .book-meta span{color:rgba(255,255,255,0.65); font-size:0.72rem; letter-spacing:0.05em; text-transform:uppercase;}
+  .book-meta b{color:#fff; font-weight:600; font-size:0.92rem; line-height:1.4;}
   .book-text h2{color:#fff; font-size:clamp(1.7rem,2.8vw,2.3rem); margin-bottom:20px;}
   .book-text p{color:rgba(255,255,255,0.9); margin-bottom:16px; font-size:1.02rem;}
   .pullquote{
@@ -312,7 +312,7 @@
       <div class="book-meta">
         <div><span>Genre</span><b>Non-fiction Narrative</b></div>
         <div><span>Pages</span><b>200</b></div>
-        <div><span>Price</span><b>$38 (postage included in Australia)</b></div>
+        <div><span>Price</span><b style="font-size:0.85rem;">$38 (postage included in Australia)</b></div>
       </div>
     </div>
     <div class="book-text">
